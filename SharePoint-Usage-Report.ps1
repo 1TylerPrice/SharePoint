@@ -39,9 +39,9 @@ Get-SPOSite -Detailed |
     }} | 
     ForEach-Object { 
 # Update SharingCapability to show more descriptive text
-        $_.SharingCapability = $_.SharingCapability -replace 'ExternalUserAndGuestSharing', 'Anyone - Allow users to share files and folders by using links that let anyone who has the link access the files or folders without authenticating.'
+        $_.SharingCapability = $_.SharingCapability -replace 'ExternalUserAndGuestSharing', 'Anyone - Lets anyone who is sent a Share link access the files or folders without authenticating.'
         $_.SharingCapability = $_.SharingCapability -replace 'ExistingExternalUserSharingOnly', 'Existing guests - Allow sharing only with guests who are already in your directory (e.g., manually added as a guest).'
-        $_.SharingCapability = $_.SharingCapability -replace 'ExternalUserSharingOnly', 'New and existing guests - Require people who have received invitations to sign in with their work or school account (if their organization uses Microsoft 365) or a personal Microsoft account, or to provide a code that is emailed to them, to verify their identity.'
+        $_.SharingCapability = $_.SharingCapability -replace 'ExternalUserSharingOnly', 'New and existing guests - Require guests to sign in with any Microsoft account, or to provide a code that is emailed to them, to verify their identity.'
         $_.SharingCapability = $_.SharingCapability -replace 'Disabled', 'Disabled - Only sharable to people in your organization. This site cannot be shared externally.'
         $_ 
     } | 
